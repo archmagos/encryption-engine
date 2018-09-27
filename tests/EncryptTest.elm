@@ -5,11 +5,13 @@ import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
 
+-- Basic test to check that strings are split and then returned to strings
+
 suite : Test
 suite =
     describe "encryptString"
-      [ test "should split string into a List" <|
+      [ test "should return a string" <|
         \_ ->
           encryptString "Apple"
-            |> Expect.equal ["A","p","p","l","e"]
+            |> Expect.equal "Apple"
       ]

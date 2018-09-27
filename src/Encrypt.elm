@@ -5,16 +5,18 @@ module Encrypt exposing (..)
 encryptString string =
   string
     |> String.split ""
-    |> scrambleChars
+    -- |> scrambleChars
     |> String.concat
 
 -- For use in mapping the List of string chars, to determine whether char index is odd or even
 
-isOdd number =
-  if modBy 2 number /= 0 then True else False
+isOdd index =
+  if modBy 2 index /= 0 then True else False
 
--- Basic function to check that index value mapping interacts appropriately with isOdd function
 
-scrambleChars list =
+-- Function returns a list of every other char
+
+getOddChars list =
   list
-    |> List.indexedMap (\ index value -> if isOdd index then "test" else value)
+    |> List.indexedMap (\ index value -> if isOdd index then Just value else Nothing)
+    |> List.filterMap identity

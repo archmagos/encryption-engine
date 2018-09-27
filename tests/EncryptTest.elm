@@ -16,6 +16,19 @@ encrypt =
             |> Expect.equal "Apple"
       ]
 
+-- Initial basic test to check that function returns list correctly
+
+scramble : Test
+scramble =
+    describe "scrambleChars"
+      [ test "should return list" <|
+        \_ ->
+          scrambleChars ["A","B","C"]
+            |> Expect.equal ["A","B","C"]
+      ]
+
+-- Tests that odd and even booleans return correctly
+
 odd : Test
 odd =
     describe "isOdd"

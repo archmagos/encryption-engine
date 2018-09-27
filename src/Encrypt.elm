@@ -5,9 +5,15 @@ module Encrypt exposing (..)
 encryptString string =
   string
     |> String.split ""
+    |> scrambleChars
     |> String.concat
 
 -- For use in mapping the List of string chars, to determine whether char index is odd or even
 
 isOdd number =
   if modBy 2 number /= 0 then True else False
+
+-- Basic function returns parameter, just to test output
+
+scrambleChars list =
+  list

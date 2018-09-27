@@ -1,6 +1,7 @@
 module Encrypt exposing (..)
 
--- Function combines two strings
+-- Initial basic function to test that string splits into a List
 
-concatStrings stringOne stringTwo =
-  stringOne ++ stringTwo
+encryptString string =
+  string
+    |> String.split ""

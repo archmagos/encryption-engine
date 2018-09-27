@@ -7,9 +7,9 @@ import Test exposing (..)
 
 suite : Test
 suite =
-    describe "Concat"
-      [ test "should return two strings combined" <|
+    describe "encryptString"
+      [ test "should split string into a List" <|
         \_ ->
-          concatStrings "Apple" "Juice"
-            |> Expect.equal "AppleJuice"
+          encryptString "Apple"
+            |> Expect.equal ["A","p","p","l","e"]
       ]

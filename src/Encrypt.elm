@@ -13,7 +13,8 @@ encryptString string =
 isOdd number =
   if modBy 2 number /= 0 then True else False
 
--- Basic function returns parameter, just to test output
+-- Basic function to check that index value mapping interacts appropriately with isOdd function
 
 scrambleChars list =
   list
+    |> List.indexedMap (\ index value -> if isOdd index then "test" else value)

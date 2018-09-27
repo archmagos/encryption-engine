@@ -13,10 +13,10 @@ encrypt =
       [ test "should return a string" <|
         \_ ->
           encryptString "Apple"
-            |> Expect.equal "Apple"
+            |> Expect.equal "Atestpteste"
       ]
 
--- Initial basic test to check that function returns list correctly
+-- Basic test to check that indexed mapping interacts appropriately with isOdd function
 
 scramble : Test
 scramble =
@@ -24,7 +24,7 @@ scramble =
       [ test "should return list" <|
         \_ ->
           scrambleChars ["A","B","C"]
-            |> Expect.equal ["A","B","C"]
+            |> Expect.equal ["A","test","C"]
       ]
 
 -- Tests that odd and even booleans return correctly

@@ -16,7 +16,7 @@ encrypt =
             |> Expect.equal "Apple"
       ]
 
--- Basic test to check that indexed mapping interacts appropriately with isOdd function
+-- Test to check that odd chars are returned as a List
 
 getodd : Test
 getodd =
@@ -26,6 +26,17 @@ getodd =
           getOddChars ["A","B","C"]
             |> Expect.equal ["B"]
       ]
+
+-- Test to check that even chars are returned as a List
+
+geteven : Test
+geteven =
+    describe "getEvenChars"
+      [ test "should return list" <|
+        \_ ->
+          getEvenChars ["A","B","C"]
+            |> Expect.equal ["A","C"]
+        ]
 
 -- Tests that odd and even booleans return correctly
 

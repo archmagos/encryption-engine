@@ -14,9 +14,16 @@ isOdd index =
   if modBy 2 index /= 0 then True else False
 
 
--- Function returns a list of every other char
+-- Function returns a list of every other (odd) chars
 
 getOddChars list =
   list
     |> List.indexedMap (\ index value -> if isOdd index then Just value else Nothing)
+    |> List.filterMap identity
+
+-- Function returns a list of even chars
+
+getEvenChars list =
+  list
+    |> List.indexedMap (\ index value -> if isOdd index == False then Just value else Nothing)
     |> List.filterMap identity

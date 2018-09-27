@@ -5,14 +5,18 @@ module Encrypt exposing (..)
 encryptString string =
   string
     |> String.split ""
-    -- |> scrambleChars
+    |> scrambleChars
     |> String.concat
+
+-- Strips odd and even chars into individual Lists and combines them
+
+scrambleChars list =
+  List.append (getOddChars list) (getEvenChars list)
 
 -- For use in mapping the List of string chars, to determine whether char index is odd or even
 
 isOdd index =
   if modBy 2 index /= 0 then True else False
-
 
 -- Function returns a list of every other (odd) chars
 

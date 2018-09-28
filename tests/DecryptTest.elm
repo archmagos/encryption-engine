@@ -1,4 +1,4 @@
-module DecryptTest exposing (decrypt, firsthalf)
+module DecryptTest exposing (decrypt, firsthalf, secondhalf)
 
 import Decrypt exposing (..)
 import Expect exposing (Expectation)
@@ -35,4 +35,22 @@ firsthalf =
             \_ ->
                 getFirstHalf "Bitcoin"
                     |> Expect.equal [ "B", "i", "t" ]
+        ]
+
+
+
+-- Tests that second half of a string is returned as a list of chars
+
+
+secondhalf : Test
+secondhalf =
+    describe "getSecondHalf"
+        [ test "should return a list of chars from second half of string" <|
+            \_ ->
+                getSecondHalf "Test"
+                    |> Expect.equal [ "s", "t" ]
+        , test "should return the second chars plus one if string length is odd" <|
+            \_ ->
+                getSecondHalf "Bitcoin"
+                    |> Expect.equal [ "c", "o", "i", "n" ]
         ]

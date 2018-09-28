@@ -1,4 +1,4 @@
-module Decrypt exposing (decryptString, getFirstHalf)
+module Decrypt exposing (decryptString, getFirstHalf, getSecondHalf)
 
 import Helpers exposing (..)
 
@@ -22,3 +22,18 @@ getFirstHalf : String -> List String
 getFirstHalf string =
     String.left (halveLength string) string
         |> String.split ""
+
+
+
+-- Function returns a list containing chars from the second half of string
+
+
+getSecondHalf : String -> List String
+getSecondHalf string =
+    if isOdd (String.length string) then
+        String.right (halveLength string + 1) string
+            |> String.split ""
+
+    else
+        String.right (halveLength string) string
+            |> String.split ""

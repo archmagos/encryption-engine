@@ -4,7 +4,9 @@ import Helpers exposing (..)
 
 
 
--- Basic function splits and then returns a string, just to test output and parameter expectations are accurate
+{- Splits String into List, scrambles order and reassembles as a new String.
+   Recursion allows encrypton to be called n number of times.
+-}
 
 
 encryptString : Int -> String -> String
@@ -21,7 +23,7 @@ encryptString n string =
 
 
 
--- Strips odd and even chars into individual Lists and combines them
+-- Combines two Lists comprising odd and even chars from original String.
 
 
 scrambleChars : List list -> List list
@@ -30,7 +32,7 @@ scrambleChars list =
 
 
 
--- Function returns a list of every other (odd) chars
+-- Returns a List of odd indexed chars taken from original String.
 
 
 getOddChars : List list -> List list
@@ -48,7 +50,7 @@ getOddChars list =
 
 
 
--- Function returns a list of even chars
+-- Returns a List of even indexed chars taken from original String.
 
 
 getEvenChars : List list -> List list

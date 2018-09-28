@@ -1,6 +1,6 @@
-module Helpers exposing (halveLength, isOdd)
+module Helpers exposing (isOdd)
 
--- For use in mapping the List of string chars, to determine whether char index is odd or even
+-- Basic boolean function used in both Encryption and Decryption modules.
 
 
 isOdd : Int -> Bool
@@ -10,12 +10,3 @@ isOdd index =
 
     else
         False
-
-
-
--- Halves length of string rounded down, to allow decryption to split string appropriately
-
-
-halveLength : String -> Int
-halveLength string =
-    String.length string // 2

@@ -7,13 +7,10 @@ import Test exposing (..)
 
 
 
--- Test to check that odd chars are returned as a List
-
-
 getodd : Test
 getodd =
     describe "getOddChars"
-        [ test "should return list" <|
+        [ test "should return odd indexed chars in a List" <|
             \_ ->
                 getOddChars [ "A", "B", "C" ]
                     |> Expect.equal [ "B" ]
@@ -21,13 +18,10 @@ getodd =
 
 
 
--- Test to check that even chars are returned as a List
-
-
 geteven : Test
 geteven =
     describe "getEvenChars"
-        [ test "should return list" <|
+        [ test "should return even indexed chars in a List" <|
             \_ ->
                 getEvenChars [ "A", "B", "C" ]
                     |> Expect.equal [ "A", "C" ]
@@ -35,18 +29,15 @@ geteven =
 
 
 
--- Tests that encryptString function produces accurate scramble
-
-
 encrypt : Test
 encrypt =
     describe "encryptString"
-        [ test "should return a string" <|
+        [ test "should return an accurate scramble" <|
             \_ ->
                 encryptString 1 "This is a test!"
                     |> Expect.equal "hsi  etTi sats!"
         , test "can be called n number of times" <|
             \_ ->
-                encryptString 3 "This is a test!"
-                    |> Expect.equal " Tah itse sits!"
+                encryptString 2 "This is a test!"
+                    |> Expect.equal "s eT ashi tist!"
         ]

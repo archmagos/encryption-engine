@@ -43,6 +43,10 @@ encrypt =
     describe "encryptString"
         [ test "should return a string" <|
             \_ ->
-                encryptString "This is a test!"
+                encryptString 1 "This is a test!"
                     |> Expect.equal "hsi  etTi sats!"
+        , test "can be called n number of times" <|
+            \_ ->
+                encryptString 3 "This is a test!"
+                    |> Expect.equal " Tah itse sits!"
         ]

@@ -7,12 +7,17 @@ import Helpers exposing (..)
 -- Basic function splits and then returns a string, just to test output and parameter expectations are accurate
 
 
-encryptString : String -> String
-encryptString string =
-    string
-        |> String.split ""
-        |> scrambleChars
-        |> String.concat
+encryptString : Int -> String -> String
+encryptString n string =
+    if n < 1 then
+        string
+
+    else
+        string
+            |> String.split ""
+            |> scrambleChars
+            |> String.concat
+            |> encryptString (n - 1)
 
 
 

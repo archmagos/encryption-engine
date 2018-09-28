@@ -63,4 +63,12 @@ decrypttest =
             \_ ->
                 decryptString 2 "s eT ashi tist!"
                     |> Expect.equal "This is a test!"
+        , test "returns input String if n < 1" <|
+            \_ ->
+                decryptString 0 "This is a test!"
+                    |> Expect.equal "This is a test!"
+        , test "returns input String if input String is empty" <|
+            \_ ->
+                decryptString 1 ""
+                    |> Expect.equal ""
         ]

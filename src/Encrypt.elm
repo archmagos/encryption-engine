@@ -1,4 +1,4 @@
-module Encrypt exposing (..)
+module Encrypt exposing (encryptString, getEvenChars, getOddChars, scrambleChars)
 
 import Helpers exposing (..)
 

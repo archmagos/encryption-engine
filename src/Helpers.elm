@@ -1,4 +1,4 @@
-module Helpers exposing (..)
+module Helpers exposing (halveLength, isOdd)
 
 -- For use in mapping the List of string chars, to determine whether char index is odd or even
 
@@ -18,4 +18,4 @@ isOdd index =
 
 halveLength : String -> Int
 halveLength string =
-  (String.length string) // 2
+    String.length string // 2

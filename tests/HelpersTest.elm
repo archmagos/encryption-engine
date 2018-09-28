@@ -1,8 +1,8 @@
-module HelpersTest exposing (..)
+module HelpersTest exposing (halve, odd)
 
-import Helpers exposing (..)
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
+import Helpers exposing (..)
 import Test exposing (..)
 
 

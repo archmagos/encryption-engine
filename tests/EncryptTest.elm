@@ -1,4 +1,4 @@
-module EncryptTest exposing (..)
+module EncryptTest exposing (encrypt, geteven, getodd)
 
 import Encrypt exposing (..)
 import Expect exposing (Expectation)

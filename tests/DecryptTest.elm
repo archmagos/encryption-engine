@@ -1,4 +1,4 @@
-module DecryptTest exposing (..)
+module DecryptTest exposing (decrypt, firsthalf)
 
 import Decrypt exposing (..)
 import Expect exposing (Expectation)
@@ -17,4 +17,22 @@ decrypt =
             \_ ->
                 decryptString "Test"
                     |> Expect.equal "Test"
+        ]
+
+
+
+-- Tests that first half of a string is returned as a list of chars
+
+
+firsthalf : Test
+firsthalf =
+    describe "getFirstHalf"
+        [ test "should return a list of chars from first half of string" <|
+            \_ ->
+                getFirstHalf "Test"
+                    |> Expect.equal [ "T", "e" ]
+        , test "should return the first chars rounded down if string length is odd" <|
+            \_ ->
+                getFirstHalf "Bitcoin"
+                    |> Expect.equal [ "B", "i", "t" ]
         ]

@@ -1,6 +1,6 @@
-module Encrypt exposing (encryptString, getEvenChars, getOddChars, scrambleChars)
+module Encrypt exposing (..)
 
-import Helpers exposing (isOdd)
+import Helpers exposing (..)
 
 
 

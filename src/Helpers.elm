@@ -1,7 +1,5 @@
 module Helpers exposing (..)
 
-
-
 -- For use in mapping the List of string chars, to determine whether char index is odd or even
 
 
@@ -12,3 +10,12 @@ isOdd index =
 
     else
         False
+
+
+
+-- Halves length of string rounded down, to allow decryption to split string appropriately
+
+
+halveLength : String -> Int
+halveLength string =
+  (String.length string) // 2

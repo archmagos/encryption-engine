@@ -1,27 +1,9 @@
-module EncryptTest exposing (encrypt, geteven, getodd, odd)
+module EncryptTest exposing (..)
 
 import Encrypt exposing (..)
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
-
-
-
--- Tests that odd and even booleans return correctly
-
-
-odd : Test
-odd =
-    describe "isOdd"
-        [ test "should return true if number is odd" <|
-            \_ ->
-                isOdd 3
-                    |> Expect.equal True
-        , test "should return false if number is even" <|
-            \_ ->
-                isOdd 4
-                    |> Expect.equal False
-        ]
 
 
 

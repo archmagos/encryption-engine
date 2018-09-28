@@ -1,4 +1,4 @@
-module DecryptTest exposing (encrypt)
+module DecryptTest exposing (..)
 
 import Decrypt exposing (..)
 import Expect exposing (Expectation)
@@ -10,8 +10,8 @@ import Test exposing (..)
 -- Basic test to check that function pipes and returns appropriately
 
 
-encrypt : Test
-encrypt =
+decrypt : Test
+decrypt =
     describe "decryptString"
         [ test "should return a string" <|
             \_ ->

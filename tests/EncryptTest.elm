@@ -40,4 +40,12 @@ encrypt =
             \_ ->
                 encryptString 2 "This is a test!"
                     |> Expect.equal "s eT ashi tist!"
+        , test "returns input String if n < 1" <|
+            \_ ->
+                encryptString 0 "This is a test!"
+                    |> Expect.equal "This is a test!"
+        , test "returns input String if input String is empty" <|
+            \_ ->
+                encryptString 1 ""
+                    |> Expect.equal ""
         ]

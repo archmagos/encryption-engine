@@ -11,7 +11,7 @@ import Helpers exposing (..)
 
 encryptString : Int -> String -> String
 encryptString n string =
-    if n < 1 then
+    if n < 1 || String.isEmpty string then
         string
 
     else

@@ -1,23 +1,9 @@
-module DecryptTest exposing (decrypt, firsthalf, secondhalf)
+module DecryptTest exposing (decrypttest, firsthalf, secondhalf)
 
 import Decrypt exposing (..)
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
-
-
-
--- Basic test to check that function pipes and returns appropriately
-
-
-decrypt : Test
-decrypt =
-    describe "decryptString"
-        [ test "should return a string" <|
-            \_ ->
-                decryptString "Test"
-                    |> Expect.equal "Test"
-        ]
 
 
 
@@ -53,4 +39,18 @@ secondhalf =
             \_ ->
                 getSecondHalf "Bitcoin"
                     |> Expect.equal [ "c", "o", "i", "n" ]
+        ]
+
+
+
+-- Tests that decryptString function produces accurate string
+
+
+decrypttest : Test
+decrypttest =
+    describe "decryptString"
+        [ test "should return an accurately decrypted string" <|
+            \_ ->
+                decryptString "hsi  etTi sats!"
+                    |> Expect.equal "This is a test!"
         ]

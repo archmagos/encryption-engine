@@ -9,9 +9,22 @@ import Helpers exposing (..)
 
 decryptString : String -> String
 decryptString string =
-    string
-        |> String.split ""
+    assembleChars (getSecondHalf string) (getFirstHalf string)
         |> String.concat
+
+
+
+-- Strips odd and even chars into individual Lists and combines them
+
+
+assembleChars : List String -> List String -> List String
+assembleChars listOne listTwo =
+    case listOne of
+        x :: list ->
+            x :: assembleChars listTwo list
+
+        _ ->
+            []
 
 
 

@@ -51,6 +51,10 @@ decrypttest =
     describe "decryptString"
         [ test "should return an accurately decrypted string" <|
             \_ ->
-                decryptString "hsi  etTi sats!"
+                decryptString 1 "hsi  etTi sats!"
+                    |> Expect.equal "This is a test!"
+        , test "can be called n number of times" <|
+            \_ ->
+                decryptString 3 " Tah itse sits!"
                     |> Expect.equal "This is a test!"
         ]

@@ -7,10 +7,15 @@ import Helpers exposing (..)
 -- Basic function splits and then returns a string, just to test output and parameter expectations are accurate
 
 
-decryptString : String -> String
-decryptString string =
-    assembleChars (getSecondHalf string) (getFirstHalf string)
-        |> String.concat
+decryptString : Int -> String -> String
+decryptString n string =
+    if n < 1 then
+        string
+
+    else
+        assembleChars (getSecondHalf string) (getFirstHalf string)
+            |> String.concat
+            |> decryptString (n - 1)
 
 
 

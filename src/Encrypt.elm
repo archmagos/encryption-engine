@@ -1,6 +1,60 @@
-module Encrypt exposing (encryptString, getEvenChars, getOddChars, scrambleChars)
+module Encrypt exposing (Model, Msg(..), encryptString, getEvenChars, getOddChars, init, main, scrambleChars, update, view)
 
+import Browser
 import Helpers exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (onClick, onInput)
+
+
+
+-- MAIN
+
+
+main =
+    Browser.sandbox { init = init, update = update, view = view }
+
+
+
+-- MODEL
+
+
+type alias Model =
+    { encrypted : String
+    , content : String
+    , num : Int
+    }
+
+
+init : Model
+init =
+    { encrypted = ""
+    , content = ""
+    , num = 0
+    }
+
+
+
+-- UPDATE
+
+
+type Msg
+    = Change
+    | TextInput String
+    | NumInput String
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        Change ->
+            { model | encrypted = encryptString model.num model.content }
+
+        TextInput newContent ->
+            { model | content = newContent }
+
+        NumInput newContent ->
+            { model | num = Maybe.withDefault 0 (String.toInt newContent) }
 
 
 
@@ -65,3 +119,17 @@ getEvenChars list =
                     Nothing
             )
         |> List.filterMap identity
+
+
+
+-- VIEW
+
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ input [ placeholder "Text to encrypt", onInput TextInput ] []
+        , input [ placeholder "Num of times", onInput NumInput ] []
+        , button [ onClick Change ] [ text "Encrypt" ]
+        , text model.encrypted
+        ]

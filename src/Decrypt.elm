@@ -1,6 +1,60 @@
-module Decrypt exposing (decryptString, getFirstHalf, getSecondHalf, halveLength)
+module Decrypt exposing (Model, Msg(..), assembleChars, decryptString, getFirstHalf, getSecondHalf, halveLength, init, main, update, view)
 
+import Browser
 import Helpers exposing (..)
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (onClick, onInput)
+
+
+
+-- MAIN
+
+
+main =
+    Browser.sandbox { init = init, update = update, view = view }
+
+
+
+-- MODEL
+
+
+type alias Model =
+    { decrypted : String
+    , content : String
+    , num : Int
+    }
+
+
+init : Model
+init =
+    { decrypted = ""
+    , content = ""
+    , num = 0
+    }
+
+
+
+-- UPDATE
+
+
+type Msg
+    = Change
+    | TextInput String
+    | NumInput String
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        Change ->
+            { model | decrypted = decryptString model.num model.content }
+
+        TextInput newContent ->
+            { model | content = newContent }
+
+        NumInput newContent ->
+            { model | num = Maybe.withDefault 0 (String.toInt newContent) }
 
 
 
@@ -67,3 +121,17 @@ getSecondHalf string =
 halveLength : String -> Int
 halveLength string =
     String.length string // 2
+
+
+
+-- VIEW
+
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ input [ placeholder "Text to decrypt", onInput TextInput ] []
+        , input [ placeholder "Num of times", onInput NumInput ] []
+        , button [ onClick Change ] [ text "Decrypt" ]
+        , text model.decrypted
+        ]

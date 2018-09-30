@@ -16,7 +16,10 @@ main =
 
 
 
--- MODEL
+{- MODEL
+   'content' and 'num' store user form input.
+   'decrypted' stores final decrypted string.
+-}
 
 
 type alias Model =
@@ -35,7 +38,11 @@ init =
 
 
 
--- UPDATE
+{- UPDATE
+   TextInput update sets model content to user string input.
+   NumInput converts user input to an Integer and sets model num to this value.
+   Change calls the decryptString function, passing in model content & num.
+-}
 
 
 type Msg
@@ -124,7 +131,10 @@ halveLength string =
 
 
 
--- VIEW
+{- VIEW
+   Very basic view, rendering a form with two inputs and a button.
+   Decrypted text is rendered with styling to ensure whitespace is preserved.
+-}
 
 
 view : Model -> Html Msg

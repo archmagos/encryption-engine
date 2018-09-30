@@ -127,7 +127,7 @@ getEvenChars list =
 
 view : Model -> Html Msg
 view model =
-    div []
+    div [ style "white-space" "pre" ]
         [ input [ placeholder "Text to encrypt", onInput TextInput ] []
         , input [ placeholder "Num of times", onInput NumInput ] []
         , button [ onClick Change ] [ text "Encrypt" ]

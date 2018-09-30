@@ -129,7 +129,7 @@ halveLength string =
 
 view : Model -> Html Msg
 view model =
-    div []
+    div [ style "white-space" "pre" ]
         [ input [ placeholder "Text to decrypt", onInput TextInput ] []
         , input [ placeholder "Num of times", onInput NumInput ] []
         , button [ onClick Change ] [ text "Decrypt" ]

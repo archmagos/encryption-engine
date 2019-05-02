@@ -6,7 +6,6 @@ import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
 
 
-
 getodd : Test
 getodd =
     describe "getOddChars"
@@ -17,7 +16,6 @@ getodd =
         ]
 
 
-
 geteven : Test
 geteven =
     describe "getEvenChars"
@@ -26,7 +24,6 @@ geteven =
                 getEvenChars [ "A", "B", "C" ]
                     |> Expect.equal [ "A", "C" ]
         ]
-
 
 
 encrypt : Test

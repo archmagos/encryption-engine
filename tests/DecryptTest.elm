@@ -1,10 +1,9 @@
-module DecryptTest exposing (decrypttest, firsthalf, secondhalf, halve)
+module DecryptTest exposing (decrypttest, firsthalf, halve, secondhalf)
 
 import Decrypt exposing (..)
 import Expect exposing (Expectation)
 import Fuzz exposing (Fuzzer, int, list, string)
 import Test exposing (..)
-
 
 
 firsthalf : Test
@@ -21,7 +20,6 @@ firsthalf =
         ]
 
 
-
 secondhalf : Test
 secondhalf =
     describe "getSecondHalf"
@@ -36,7 +34,6 @@ secondhalf =
         ]
 
 
-
 halve : Test
 halve =
     describe "halveLength"
@@ -49,7 +46,6 @@ halve =
                 halveLength "bitcoin"
                     |> Expect.equal 3
         ]
-
 
 
 decrypttest : Test

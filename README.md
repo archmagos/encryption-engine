@@ -1,6 +1,8 @@
-## Simple Encryption Engine
+## Encryption Engine
 
-![Build Status](./demo.gif)
+[![Build Status](https://travis-ci.com/archmagos/encryption-engine.svg?branch=master)](https://travis-ci.com/archmagos/encryption-engine)
+
+![Demo](./demo.gif)
 
 A simple encryption (and decryption) engine built in Elm, with a basic front-end rendering a form and output. Back-end logic is fully tested and TDD'd. Basic documentation is provided as comments in the Elm source files. 
 

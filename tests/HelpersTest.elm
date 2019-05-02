@@ -6,7 +6,6 @@ import Helpers exposing (..)
 import Test exposing (..)
 
 
-
 odd : Test
 odd =
     describe "isOdd"
